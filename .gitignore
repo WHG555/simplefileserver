@@ -1,0 +1,3 @@
+# 屏蔽不需要的文件
+dist/
+src/smallfileserver.egg-info
