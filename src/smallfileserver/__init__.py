@@ -1,3 +1,2 @@
 from .fileserver import RequestHandler,HTTPServer
-
-version = "0.1.0"
+from .versions import version
