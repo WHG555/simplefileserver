@@ -1,9 +1,11 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 
 import sys
 import argparse
 
+from .fileserver import runserver
 
-from .fileserver import HTTPServer, RequestHandler
 from .versions import version
 
 
@@ -24,11 +26,4 @@ if __name__ == '__main__':
         print("Version is", version)
         exit(0)
 
-    if int(sys.version_info[0]) == 2:
-        print("python 2 m test success")
-    elif int(sys.version_info[0]) == 3:
-        # print("python 3 m test success")
-
-        server = HTTPServer((args.ip, args.port), RequestHandler)
-        print('Server running on %s port %s' % (args.ip, args.port))
-        server.serve_forever()
+    runserver(args.ip, args.port)
